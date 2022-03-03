@@ -44,7 +44,11 @@ function Header() {
         </div>
 
         {/* Right */}
-        <HomeIcon className="h-10 w-10" />
+        <div className="flex items-center space-x-4">
+          <HomeIcon className="navBtn" />
+          <PaperAirplaneIcon className="navBtn" />
+          <MenuIcon className="h-10 w-10 md:hidden" />
+        </div>
       </div>
     </div>
   )
