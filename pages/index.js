@@ -4,7 +4,10 @@ import Feed from '../components/Feed'
 
 const Home = () => {
   return (
-    <div className="">
+    <div
+      className="h-screen overflow-y-scroll
+     bg-gray-50 scrollbar-none"
+    >
       <Head>
         <title>Social Demo App</title>
       </Head>

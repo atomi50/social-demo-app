@@ -58,7 +58,7 @@ function Header() {
           <MenuIcon className="h-10 w-10 md:hidden" />
 
           <img
-            src="https://www.downloadclipart.net/large/anonymous-mask-png-transparent-images.png"
+            src="https://www.pngkey.com/png/detail/468-4685836_funny-avatar-png-graphic-transparent-library-dream-league.png"
             alt="profile pic"
             className="hidden h-10 cursor-pointer rounded-full md:inline-flex"
           />
