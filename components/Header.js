@@ -21,14 +21,20 @@ function Header() {
     <div className="sticky top-0 z-50 border-b bg-white shadow-sm">
       <div className="mx-5 flex max-w-6xl justify-between lg:mx-auto">
         {/* Left */}
-        <div className="relative hidden  w-24 cursor-pointer lg:inline-grid">
+        <div
+          onClick={() => router.push('/')}
+          className="relative hidden  w-24 cursor-pointer lg:inline-grid"
+        >
           <Image
             src="https://static.vecteezy.com/system/resources/previews/000/623/455/original/home-logo-vector-template-building.jpg"
             layout="fill"
             objectFit="contain"
           />
         </div>
-        <div className="relative w-10 flex-shrink-0 cursor-pointer lg:hidden">
+        <div
+          onClick={() => router.push('/')}
+          className="relative w-10 flex-shrink-0 cursor-pointer lg:hidden"
+        >
           <Image
             src="https://www.kindpng.com/picc/m/390-3904363_dragon-ball-super-goku-symbol-hd-png-download.png"
             layout="fill"
@@ -52,7 +58,7 @@ function Header() {
 
         {/* Right */}
         <div className="flex items-center space-x-4">
-          <HomeIcon className="navBtn" />
+          <HomeIcon onClick={() => router.push('/')} className="navBtn" />
           <MenuIcon className="h-10 w-10 md:hidden" />
 
           {session ? (

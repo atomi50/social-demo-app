@@ -3,5 +3,5 @@ tailwind.config.js
 node_modules
 next/static/webpack
 .env.local
-.next
-
+next/cache
+next/server
