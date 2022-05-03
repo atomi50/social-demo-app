@@ -1,7 +1,6 @@
 next.config.js
 tailwind.config.js
 node_modules
-next/static/webpack
+next
 .env.local
-next/cache
-next/server
+
