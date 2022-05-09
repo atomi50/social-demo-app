@@ -1,35 +1,35 @@
 import Post from '../components/Post'
-
-const posts = [
-  {
-    id: '123',
-    username: 'atomic',
-    userImg:
-      'https://www.pngkey.com/png/detail/468-4685836_funny-avatar-png-graphic-transparent-library-dream-league.png',
-    img: 'https://endertech.com/wp-content/uploads/2020/06/react-js-projects.jpg',
-    caption: 'This is the caption',
-  },
-  {
-    id: '123',
-    username: 'atomic',
-    userImg:
-      'https://www.pngkey.com/png/detail/468-4685836_funny-avatar-png-graphic-transparent-library-dream-league.png',
-    img: 'https://endertech.com/wp-content/uploads/2020/06/react-js-projects.jpg',
-    caption: 'This is the caption',
-  },
-]
+import { useEffect, useState } from 'react'
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
+import { db } from '../firebase'
 
 function Posts() {
+  const [posts, setPosts] = useState([])
+
+  useEffect(
+    () =>
+      onSnapshot(
+        query(collection(db, 'posts'), orderBy('timestamp', 'desc')),
+        (snapshot) => {
+          setPosts(snapshot.docs)
+        }
+      ),
+
+    [db]
+  )
+
+  console.log(posts)
+
   return (
     <div>
       {posts.map((post) => (
         <Post
           key={post.id}
           id={post.id}
-          username={post.username}
-          userImg={post.userImg}
-          img={post.img}
-          caption={post.caption}
+          username={post.data().username}
+          userImg={post.data().profileImg}
+          img={post.data().image}
+          caption={post.data().caption}
         />
       ))}
     </div>
