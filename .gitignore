@@ -1,6 +1,6 @@
 next.config.js
 tailwind.config.js
-node_modules
+node_modules/
 .next/
 .env.local
 
